@@ -1,0 +1,40 @@
+Database info
+
+
+‎دیتابیس:
+chathesa_mainDb
+‎هاست:
+localhost
+‎نام کاربری:
+chathesa_ariabod
+‎رمزعبور:
+Apple09366864544
+
+
+
+Ai api : AIzaSyCqZHAZBCnXxpwoFP0VChO66W-AFo8Mi04
+
+دیتابیس:	chathesa_mainDb
+هاست:	localhost
+نام کاربری:	chathesa_ariabod
+رمزعبور:	Apple09366864544
+مشخصات سرور مجازی به شرح زیر است
+
+=============================
+
+Server Name : fastcreate-967804
+
+ 104.234.46.55:15226  : IPv4 (سرورمجازی ویندوزی)
+
+ 104.234.46.55:9011 : IPv4 (سرورمجازی لینوکسی)
+
+Username (windows)  : Administrator
+
+Username (linux)  : Root
+
+Password:BNybf9gsq7
+
+
+ برای متصل شدن به سرور های مجازی ویندوزی استفاده کنید  Administrator از یوزر
+
+ برای متصل شدن به سرور های مجازی لینوکسی استفاده کنید  root از یوزر

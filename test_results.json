@@ -1,0 +1,128 @@
+[
+  {
+    "test": "API Health Check",
+    "success": true,
+    "message": "Status: healthy",
+    "timestamp": "2025-09-11T10:32:02.057613",
+    "data": null
+  },
+  {
+    "test": "Frontend Accessibility",
+    "success": true,
+    "message": "React app is accessible",
+    "timestamp": "2025-09-11T10:32:02.108747",
+    "data": null
+  },
+  {
+    "test": "Categories",
+    "success": true,
+    "message": "Expense: 15, Income: 7",
+    "timestamp": "2025-09-11T10:32:02.110183",
+    "data": null
+  },
+  {
+    "test": "User Creation",
+    "success": true,
+    "message": "User ID: 5, Token: 99999",
+    "timestamp": "2025-09-11T10:32:02.113809",
+    "data": null
+  },
+  {
+    "test": "Authentication",
+    "success": true,
+    "message": "User: تست کاربر",
+    "timestamp": "2025-09-11T10:32:02.114910",
+    "data": null
+  },
+  {
+    "test": "Account Creation",
+    "success": true,
+    "message": "Account ID: 3",
+    "timestamp": "2025-09-11T10:32:02.117071",
+    "data": null
+  },
+  {
+    "test": "Account Retrieval",
+    "success": true,
+    "message": "Found 1 accounts",
+    "timestamp": "2025-09-11T10:32:02.117850",
+    "data": null
+  },
+  {
+    "test": "Income Transaction",
+    "success": true,
+    "message": "Transaction ID: 3",
+    "timestamp": "2025-09-11T10:32:02.119662",
+    "data": null
+  },
+  {
+    "test": "Expense Transaction",
+    "success": true,
+    "message": "Transaction ID: 4",
+    "timestamp": "2025-09-11T10:32:02.122094",
+    "data": null
+  },
+  {
+    "test": "Transaction Retrieval",
+    "success": true,
+    "message": "Found 2 transactions",
+    "timestamp": "2025-09-11T10:32:02.123872",
+    "data": null
+  },
+  {
+    "test": "AI Processing: '۵۰ هزار تومان قهوه خریدم'",
+    "success": true,
+    "message": "Type: expense, Amount: 50000.0, Category: خواربار",
+    "timestamp": "2025-09-11T10:32:02.124934",
+    "data": null
+  },
+  {
+    "test": "AI Processing: 'دیروز ۲۰۰ تومان اتوبوس'",
+    "success": true,
+    "message": "Type: expense, Amount: 200000.0, Category: حمل و نقل",
+    "timestamp": "2025-09-11T10:32:02.125720",
+    "data": null
+  },
+  {
+    "test": "AI Processing: '۱ میلیون تومان حقوق گرفتم'",
+    "success": true,
+    "message": "Type: income, Amount: 1000.0, Category: حقوق",
+    "timestamp": "2025-09-11T10:32:02.126420",
+    "data": null
+  },
+  {
+    "test": "Savings Plan Creation",
+    "success": false,
+    "message": "Status code: 500",
+    "timestamp": "2025-09-11T10:32:02.127313",
+    "data": null
+  },
+  {
+    "test": "Check Creation",
+    "success": true,
+    "message": "Check ID: 1",
+    "timestamp": "2025-09-11T10:32:02.128585",
+    "data": null
+  },
+  {
+    "test": "Check Retrieval",
+    "success": true,
+    "message": "Found 1 checks",
+    "timestamp": "2025-09-11T10:32:02.129629",
+    "data": null
+  },
+  {
+    "test": "Transaction Summary",
+    "success": true,
+    "message": "Income: 500000.0, Expense: 80000.0",
+    "timestamp": "2025-09-11T10:32:02.130657",
+    "data": null
+  },
+  {
+    "test": "Category Summary",
+    "success": true,
+    "message": "Found 2 categories",
+    "timestamp": "2025-09-11T10:32:02.131485",
+    "data": null
+  }
+]

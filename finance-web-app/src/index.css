@@ -1,0 +1,21 @@
+/* Minimal global styles (RTL + Vazirmatn) */
+:root {
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Vazirmatn';
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}

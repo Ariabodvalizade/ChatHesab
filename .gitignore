@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+*.db
+venv/
+
+# Node / Frontend
+finance-web-app/node_modules/
+finance-web-app/dist/
+finance-web-app/.vite/
+
+# Environment / misc
+.env
+.env.*
+.cache/
+coverage/
+*.local
