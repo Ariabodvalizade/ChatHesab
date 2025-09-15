@@ -3,7 +3,7 @@ import mysql.connector
 from mysql.connector import Error
 import logging
 from contextlib import contextmanager
-from config import DB_CONFIG
+from ..config import DB_CONFIG
 
 logger = logging.getLogger(__name__)
 

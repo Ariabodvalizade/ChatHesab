@@ -2,8 +2,8 @@
 import logging
 from datetime import datetime, timedelta
 from typing import Optional, Dict, List
-from database.connection import get_db
-from config import TRIAL_DAYS
+from ..database.connection import get_db
+from ..config import TRIAL_DAYS
 
 logger = logging.getLogger(__name__)
 

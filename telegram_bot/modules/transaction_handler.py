@@ -3,8 +3,8 @@ import logging
 from typing import Optional, Dict, List
 from datetime import datetime, date
 from decimal import Decimal
-from database.connection import get_db
-from modules.account_management import AccountManager
+from ..database.connection import get_db
+from .account_management import AccountManager
 
 logger = logging.getLogger(__name__)
 

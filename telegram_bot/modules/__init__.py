@@ -94,6 +94,6 @@ __all__ = [
 ]
 
 # database imports
-from database.connection import DatabaseConnection, get_db, init_database
+from ..database.connection import DatabaseConnection, get_db, init_database
 
 __all__ += ["DatabaseConnection", "get_db", "init_database"]

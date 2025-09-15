@@ -3,9 +3,9 @@ import logging
 from typing import Optional, Dict, List
 from datetime import datetime, timedelta
 from decimal import Decimal
-from database.connection import get_db
-from config import SUBSCRIPTION_PLANS
-from modules.user_management import UserManager
+from ..database.connection import get_db
+from ..config import SUBSCRIPTION_PLANS
+from .user_management import UserManager
 
 logger = logging.getLogger(__name__)
 
@@ -262,7 +262,7 @@ class SubscriptionManager:
 
     def send_renewal_reminder(self, user_id: int, days_remaining: int) -> Dict:
         """ارسال یادآوری تمدید (برای استفاده در ربات)"""
-        from utils.formatter import format_amount, english_to_persian_digits
+        from ..utils.formatter import format_amount, english_to_persian_digits
 
         subscription = self.get_active_subscription(user_id)
 

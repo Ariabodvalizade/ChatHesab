@@ -3,7 +3,7 @@ import logging
 from typing import Optional, Dict, List
 from datetime import datetime, date, timedelta
 from decimal import Decimal
-from database.connection import get_db
+from ..database.connection import get_db
 
 logger = logging.getLogger(__name__)
 
@@ -298,8 +298,8 @@ class SavingsManager:
     ) -> bool:
         """ایجاد پس‌انداز خودکار از حساب به طرح"""
         try:
-            from modules.transaction_handler import TransactionHandler
-            from modules.account_management import AccountManager
+            from .transaction_handler import TransactionHandler
+            from .account_management import AccountManager
 
             trans_handler = TransactionHandler()
             account_manager = AccountManager()

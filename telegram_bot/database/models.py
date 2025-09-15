@@ -117,7 +117,7 @@ class Transaction:
     @property
     def formatted_amount(self) -> str:
         """مبلغ فرمت‌شده"""
-        from utils.persian_utils import format_amount
+        from ..utils.persian_utils import format_amount
 
         return format_amount(self.amount)
 

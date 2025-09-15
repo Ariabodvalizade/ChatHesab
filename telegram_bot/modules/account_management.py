@@ -2,7 +2,7 @@
 import logging
 from typing import Optional, Dict, List
 from decimal import Decimal
-from database.connection import get_db
+from ..database.connection import get_db
 
 logger = logging.getLogger(__name__)
 

@@ -18,25 +18,25 @@ pip install -r requirements.txt
 echo "🔧 Fixing module structure..."
 # Create symbolic link for persian_utils in modules
 if [ ! -f "modules/persian_utils.py" ]; then
-    ln -sf "../utils/persian_utils.py" "modules/persian_utils.py"
+    ln -sf "utils/persian_utils.py" "modules/persian_utils.py"
     echo "✅ Created symbolic link for persian_utils.py"
 fi
 
 # Create symbolic link for calendar_utils in modules
 if [ ! -f "modules/calendar_utils.py" ]; then
-    ln -sf "../utils/calendar_utils.py" "modules/calendar_utils.py"
+    ln -sf "utils/calendar_utils.py" "modules/calendar_utils.py"
     echo "✅ Created symbolic link for calendar_utils.py"
 fi
 
 # Create symbolic link for formatter in modules
 if [ ! -f "modules/formatter.py" ]; then
-    ln -sf "../utils/formatter.py" "modules/formatter.py"
+    ln -sf "utils/formatter.py" "modules/formatter.py"
     echo "✅ Created symbolic link for formatter.py"
 fi
 
 # Create symbolic link for database connection in modules
 if [ ! -f "modules/connection.py" ]; then
-    ln -sf "../database/connection.py" "modules/connection.py"
+    ln -sf "database/connection.py" "modules/connection.py"
     echo "✅ Created symbolic link for connection.py"
 fi
 

@@ -8,11 +8,16 @@ import asyncio
 from datetime import datetime
 
 # Test the local components
-from config_local import BOT_TOKEN, WELCOME_MESSAGE
-from database.connection_local import get_local_db
+from telegram_bot.config_local import BOT_TOKEN, WELCOME_MESSAGE
+from telegram_bot.database.connection_local import get_local_db
 
 # Test local bot classes
-from main_local import LocalUserManager, LocalAccountManager, LocalTransactionHandler, LocalAIProcessor
+from telegram_bot.main_local import (
+    LocalUserManager,
+    LocalAccountManager,
+    LocalTransactionHandler,
+    LocalAIProcessor,
+)
 
 async def test_bot_components():
     """Test all bot components locally"""
