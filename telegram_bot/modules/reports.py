@@ -2,12 +2,12 @@
 import logging
 from typing import Dict, List, Optional
 from datetime import date, datetime, timedelta
-from database.connection import get_db
-from modules.transaction_handler import TransactionHandler
-from modules.account_management import AccountManager
-from modules.check_management import CheckManager
-from modules.ai_processor import AIProcessor
-from utils.calendar_utils import get_date_range, format_date_range
+from ..database.connection import get_db
+from .transaction_handler import TransactionHandler
+from .account_management import AccountManager
+from .check_management import CheckManager
+from .ai_processor import AIProcessor
+from ..utils.calendar_utils import get_date_range, format_date_range
 
 logger = logging.getLogger(__name__)
 

@@ -4,9 +4,13 @@ import json
 import logging
 from typing import Dict, Optional, List
 from datetime import datetime, date
-from config import GEMINI_API_KEY, GEMINI_MODEL
-from utils.persian_utils import parse_amount, extract_bank_name, normalize_persian_text
-from utils.calendar_utils import parse_persian_date, get_persian_date_string
+from ..config import GEMINI_API_KEY, GEMINI_MODEL
+from ..utils.persian_utils import (
+    parse_amount,
+    extract_bank_name,
+    normalize_persian_text,
+)
+from ..utils.calendar_utils import parse_persian_date, get_persian_date_string
 
 logger = logging.getLogger(__name__)
 

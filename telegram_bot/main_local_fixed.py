@@ -1,4 +1,4 @@
-# main_local.py - Local testing version
+# main_local_fixed.py - Fixed version for local testing
 import logging
 import sys
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
@@ -23,8 +23,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # واردات ماژول‌ها - نسخه محلی
-from config_local import BOT_TOKEN, WELCOME_MESSAGE
-from database.connection_local import init_local_database, get_local_db
+from .config_local import BOT_TOKEN, WELCOME_MESSAGE
+from .database.connection_local import init_local_database, get_local_db
 
 # ایجاد کلاس‌های محلی برای تست
 class LocalUserManager:
@@ -40,7 +40,7 @@ class LocalUserManager:
 
             # محاسبه تاریخ پایان دوره آزمایشی
             from datetime import datetime, timedelta
-            from config_local import TRIAL_DAYS
+            from .config_local import TRIAL_DAYS
             trial_end = datetime.now() + timedelta(days=TRIAL_DAYS)
 
             query = """
@@ -608,10 +608,17 @@ class LocalFinanceBot:
         await update.message.reply_text("❌ عملیات لغو شد.", parse_mode="Markdown")
         return ConversationHandler.END
 
+    # Add account callback handler
+    async def add_account_filter(self, update: Update, context):
+        """Filter for add account callback"""
+        if update.callback_query and update.callback_query.data == "add_account":
+            return True
+        return False
+
 
 def main():
     """تابع اصلی اجرای ربات محلی"""
-    print("🚀 شروع ربات محلی...")
+    print("🚀 شروع ربات محلی (نسخه بدون تداخل)...")
     
     # راه‌اندازی دیتابیس محلی
     try:
@@ -627,45 +634,30 @@ def main():
     # ایجاد Application
     application = Application.builder().token(BOT_TOKEN).build()
 
-    # ConversationHandler برای ثبت حساب
-    async def add_account_callback(update, context):
-        return update.callback_query.data == "add_account"
-    
-    account_conv_handler = ConversationHandler(
-        entry_points=[
-            CallbackQueryHandler(add_account_callback),
-            CommandHandler("start", bot.start),
-        ],
-        states={
-            ACCOUNT_BANK_NAME: [
-                MessageHandler(filters.TEXT & ~filters.COMMAND, bot.get_bank_name)
-            ],
-            ACCOUNT_NAME: [
-                MessageHandler(filters.TEXT & ~filters.COMMAND, bot.get_account_name)
-            ],
-            ACCOUNT_BALANCE: [
-                MessageHandler(filters.TEXT & ~filters.COMMAND, bot.get_account_balance)
-            ],
-        },
-        fallbacks=[CommandHandler("cancel", bot.cancel)],
-    )
-
-    # اضافه کردن هندلرها
+    # Simple handlers first (no ConversationHandler conflicts)
     application.add_handler(CommandHandler("start", bot.start))
     application.add_handler(CommandHandler("help", bot.help_command))
     application.add_handler(CommandHandler("accounts", bot.accounts_command))
-    application.add_handler(account_conv_handler)
+    
+    # Callback handler for main interactions
     application.add_handler(CallbackQueryHandler(bot.handle_callback))
+    
+    # Message handler for transactions (excluding commands)
     application.add_handler(
         MessageHandler(filters.TEXT & ~filters.COMMAND, bot.handle_message)
     )
 
     # شروع ربات
-    print("✅ ربات محلی آماده است!")
+    print("✅ ربات محلی آماده است! (بدون ConversationHandler)")
     print("💬 برای تست، به ربات @FinanceAppReminderBot پیام بدهید")
+    print("🔥 نکته: ابتدا /start بزنید، سپس پیام‌های خود را بفرستید")
     print("🛑 برای توقف، Ctrl+C را فشار دهید")
     
-    application.run_polling(allowed_updates=Update.ALL_TYPES)
+    try:
+        application.run_polling(allowed_updates=Update.ALL_TYPES)
+    except Exception as e:
+        print(f"خطا: {e}")
+        print("💡 احتمالاً نمونه دیگری از ربات در حال اجرا است")
 
 
 if __name__ == "__main__":

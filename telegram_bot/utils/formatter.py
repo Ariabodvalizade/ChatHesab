@@ -1,8 +1,8 @@
 # utils/formatter.py
 from typing import List, Dict, Optional, Union
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-from utils.persian_utils import format_amount, english_to_persian_digits
-from utils.calendar_utils import get_persian_date_string
+from .persian_utils import format_amount, english_to_persian_digits
+from .calendar_utils import get_persian_date_string
 from datetime import date, datetime
 
 

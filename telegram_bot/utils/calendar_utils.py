@@ -2,7 +2,7 @@
 from datetime import datetime, date, timedelta
 from typing import Tuple, Optional
 import jdatetime
-from utils.persian_utils import persian_to_english_digits, english_to_persian_digits
+from .persian_utils import persian_to_english_digits, english_to_persian_digits
 
 # نام ماه‌های شمسی
 PERSIAN_MONTHS = [

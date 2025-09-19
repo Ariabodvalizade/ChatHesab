@@ -2,7 +2,7 @@
 import sqlite3
 import logging
 from contextlib import contextmanager
-from config_local import DB_CONFIG
+from ..config_local import DB_CONFIG
 
 logger = logging.getLogger(__name__)
 

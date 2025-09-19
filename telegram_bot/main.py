@@ -23,18 +23,18 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # واردات ماژول‌ها
-from config import BOT_TOKEN, WELCOME_MESSAGE
-from database.connection import init_database
-from modules.user_management import UserManager
-from modules.account_management import AccountManager
-from modules.transaction_handler import TransactionHandler
-from modules.ai_processor import AIProcessor
-from modules.check_management import CheckManager
-from modules.reports import ReportGenerator
-from modules.savings_plans import SavingsManager
-from modules.subscription import SubscriptionManager
-from modules.voice_handler import VoiceHandler
-from utils.formatter import (
+from .config import BOT_TOKEN, WELCOME_MESSAGE
+from .database.connection import init_database
+from .modules.user_management import UserManager
+from .modules.account_management import AccountManager
+from .modules.transaction_handler import TransactionHandler
+from .modules.ai_processor import AIProcessor
+from .modules.check_management import CheckManager
+from .modules.reports import ReportGenerator
+from .modules.savings_plans import SavingsManager
+from .modules.subscription import SubscriptionManager
+from .modules.voice_handler import VoiceHandler
+from .utils.formatter import (
     create_main_menu,
     create_help_message,
     format_error_message,
@@ -191,8 +191,8 @@ class FinanceBot:
 
     async def show_transaction_confirmation(self, update: Update, context, data):
         """نمایش تأیید تراکنش"""
-        from utils.formatter import format_amount
-        from utils.calendar_utils import get_persian_date_string
+        from .utils.formatter import format_amount
+        from .utils.calendar_utils import get_persian_date_string
 
         # آماده‌سازی پیام تأیید
         if data["transaction_type"] == "expense":
@@ -311,7 +311,7 @@ class FinanceBot:
 
     async def show_accounts_list(self, update: Update, context):
         """نمایش لیست حساب‌ها"""
-        from utils.formatter import format_account_summary
+        from .utils.formatter import format_account_summary
 
         query = update.callback_query
         user_id = context.user_data.get("user_id")
@@ -328,7 +328,7 @@ class FinanceBot:
 
     async def show_subscription_options(self, update: Update, context):
         """نمایش گزینه‌های اشتراک"""
-        from config import SUBSCRIPTION_PLANS
+        from .config import SUBSCRIPTION_PLANS
 
         msg = "⏰ **دوره آزمایشی شما به پایان رسیده است!**\n\n"
         msg += "برای ادامه استفاده از ربات، لطفاً یکی از پلن‌های زیر را انتخاب کنید:\n\n"
@@ -377,7 +377,7 @@ class FinanceBot:
 
     async def get_account_balance(self, update: Update, context):
         """دریافت موجودی اولیه"""
-        from utils.persian_utils import parse_amount
+        from .utils.persian_utils import parse_amount
 
         balance_text = update.message.text
         balance = parse_amount(balance_text)

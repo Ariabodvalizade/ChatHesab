@@ -3,7 +3,7 @@ import logging
 from typing import Optional, Dict, List
 from datetime import datetime, date, timedelta
 from decimal import Decimal
-from database.connection import get_db
+from ..database.connection import get_db
 
 logger = logging.getLogger(__name__)
 
@@ -157,7 +157,7 @@ class CheckManager:
 
             # ایجاد تراکنش اگر درخواست شده
             if create_transaction:
-                from modules.transaction_handler import TransactionHandler
+                from .transaction_handler import TransactionHandler
 
                 trans_handler = TransactionHandler()
 

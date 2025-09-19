@@ -17,16 +17,16 @@ import os
 import tempfile
 
 # Import existing bot modules
-from database.connection import init_database
-from modules.user_management import UserManager
-from modules.account_management import AccountManager
-from modules.transaction_handler import TransactionHandler
-from modules.ai_processor import AIProcessor
-from modules.check_management import CheckManager
-from modules.reports import ReportGenerator
-from modules.savings_plans import SavingsManager
-from modules.subscription import SubscriptionManager
-from modules.voice_handler import VoiceHandler
+from .database.connection import init_database
+from .modules.user_management import UserManager
+from .modules.account_management import AccountManager
+from .modules.transaction_handler import TransactionHandler
+from .modules.ai_processor import AIProcessor
+from .modules.check_management import CheckManager
+from .modules.reports import ReportGenerator
+from .modules.savings_plans import SavingsManager
+from .modules.subscription import SubscriptionManager
+from .modules.voice_handler import VoiceHandler
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)

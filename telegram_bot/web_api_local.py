@@ -16,7 +16,7 @@ import os
 import tempfile
 
 # Import local database components
-from database.connection_local import get_local_db, init_local_database
+from .database.connection_local import get_local_db, init_local_database
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -168,7 +168,7 @@ def process_message_with_ai(message: str, accounts: List[Dict]) -> Dict:
     """Enhanced AI message processing using Google Gemini"""
     try:
         import google.generativeai as genai
-        from config_local import GEMINI_API_KEY, GEMINI_MODEL
+        from .config_local import GEMINI_API_KEY, GEMINI_MODEL
 
         # Configure Gemini API
         genai.configure(api_key=GEMINI_API_KEY)
@@ -1627,7 +1627,7 @@ def get_user_financial_analysis(user_id: int) -> Dict:
             fetch_all=True,
         )
 
-        # Get account balances
+        from .config_local import GEMINI_API_KEY, GEMINI_MODEL
         accounts = db.execute_query(
             "SELECT bank_name, account_name, current_balance FROM bank_accounts WHERE user_id = ? AND is_active = 1",
             (user_id,),
@@ -1814,7 +1814,7 @@ async def analyze_financial_status(
         # Add usage info to response
         result["usage_info"] = {
             "usage_remaining": 0,  # Used up this hour
-            "next_available_minutes": 60,  # Next hour
+        from .config_local import GEMINI_API_KEY, GEMINI_MODEL
         }
 
         return result
